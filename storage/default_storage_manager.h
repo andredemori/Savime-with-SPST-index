@@ -208,6 +208,7 @@ public:
   void DisposeObject(MetadataObject *object) override;
 
   string GetObjectInfo(MetadataObjectPtr object, string infoType) override;
+
 };
 
 

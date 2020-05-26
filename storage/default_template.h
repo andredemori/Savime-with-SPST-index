@@ -29,6 +29,14 @@
 #include <omp.h>
 #include <cstdlib>
 
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <fstream>
+#include <math.h>
+#include <unistd.h>
+#include "../spst-master/src/spst.h"
+
 #define TOLERANCE 1e-06
 #define IMPLICIT_LOGICAL2REAL(DIM, PRE, INDEX, OUT)                            \
   double intpart;                                                              \
@@ -945,6 +953,9 @@ public:
 
       destinyDataset =
         _storageManager->Create(type, filterDataSet->GetEntryCount());
+
+      destinyDataset->SpstManager = originDataset->SpstManager; ////
+
       if (destinyDataset == nullptr)
         throw std::runtime_error("Could not create dataset.");
 
@@ -1040,6 +1051,11 @@ public:
 
     SavimeResult Comparison(string op, DatasetPtr operand1, Literal _operand2,
                             DatasetPtr &destinyDataset) override {
+
+        float temp;
+        clock_t g;
+        g = clock();
+
       int numCores = _configurationManager->GetIntValue(MAX_THREADS);
       int32_t minWorkPerThread =
         _configurationManager->GetIntValue(WORK_PER_THREAD);
@@ -1047,53 +1063,119 @@ public:
 
       DatasetHandlerPtr op1Handler = _storageManager->GetHandler(operand1);
 
+      T1 *buffer = (T1 *) op1Handler->GetBuffer();
+
+           SPSTTree T = operand1->SpstManager;
+            if(T != NULL) {
+                SPSTTree ResultList = new SPSTNode(); //Objeto que vai conter a lista de resultados retornada pelo Filter
+                SPSTTree Taux = copyTree(T);
+
+                Filter_spst(_operand2.dbl, op, Taux, ResultList); // alterar filter para aceitar um double
+
+                operand1->SpstManager = copyTree(ResultList);
+
+                auto op1Buffer =
+                        BUILD_VECTOR<T1>(op1Handler->GetBuffer(), operand1->GetType());
+                T2 operand2;
+                GET_LITERAL(operand2, _operand2, T2);
+
+                destinyDataset = make_shared<Dataset>(entryCount);
+                destinyDataset->AddListener(
+                        std::dynamic_pointer_cast<DefaultStorageManager>(_storageManager));
+                destinyDataset->HasIndexes() = false;
+                destinyDataset->Sorted() = false;
 
 
+                SET_THREADS_ALIGNED(entryCount, minWorkPerThread, numCores,
+                                    destinyDataset->GetBitsPerBlock());
 
-      auto op1Buffer =
-        BUILD_VECTOR<T1>(op1Handler->GetBuffer(), operand1->GetType());
-      T2 operand2;
-      GET_LITERAL(operand2, _operand2, T2);
+                if (!op.compare(_EQ)) {
+#pragma omp parallel
+                    //for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
+                    for (auto it = ResultList->resultsearchlist.begin(); it != ResultList->resultsearchlist.end(); ++it)
+                        (*destinyDataset->BitMask())[it->position] = (*op1Buffer)[it->position] == operand2;
+                } else if (!op.compare(_NEQ)) {
+#pragma omp parallel
+                    for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
+                        // for (auto it=ResultList->list.begin(); it != ResultList->list.end(); ++it)
+                        (*destinyDataset->BitMask())[i] = (*op1Buffer)[i] != operand2;
+                } else if (!op.compare(_LE)) {
+#pragma omp parallel
+                    //for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
+                    for (auto it = ResultList->resultsearchlist.begin(); it != ResultList->resultsearchlist.end(); ++it)
+                        (*destinyDataset->BitMask())[it->position] = (*op1Buffer)[it->position] < operand2;
+                } else if (!op.compare(_GE)) {
+#pragma omp parallel
+                    //for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
+                    for (auto it = ResultList->resultsearchlist.begin(); it != ResultList->resultsearchlist.end(); ++it)
+                        (*destinyDataset->BitMask())[it->position] = (*op1Buffer)[it->position] > operand2;
+                } else if (!op.compare(_LEQ)) {
+#pragma omp parallel
+                    //for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
+                    for (auto it = ResultList->resultsearchlist.begin(); it != ResultList->resultsearchlist.end(); ++it)
+                        (*destinyDataset->BitMask())[it->position] = (*op1Buffer)[it->position] <= operand2;
+                } else if (!op.compare(_GEQ)) {
+#pragma omp parallel
+                    //for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
+                    for (auto it = ResultList->resultsearchlist.begin(); it != ResultList->resultsearchlist.end(); ++it)
+                        (*destinyDataset->BitMask())[it->position] = (*op1Buffer)[it->position] >= operand2;
+                } else {
+                    throw std::runtime_error("Invalid comparison operation.");
+                }
 
-      destinyDataset = make_shared<Dataset>(entryCount);
-      destinyDataset->AddListener(
-        std::dynamic_pointer_cast<DefaultStorageManager>(_storageManager));
-      destinyDataset->HasIndexes() = false;
-      destinyDataset->Sorted() = false;
+            }else{
 
-      SET_THREADS_ALIGNED(entryCount, minWorkPerThread, numCores,
-                          destinyDataset->GetBitsPerBlock());
+                auto op1Buffer =
+                        BUILD_VECTOR<T1>(op1Handler->GetBuffer(), operand1->GetType());
+                T2 operand2;
+                GET_LITERAL(operand2, _operand2, T2);
 
-      if (!op.compare(_EQ)) {
+                destinyDataset = make_shared<Dataset>(entryCount);
+                destinyDataset->AddListener(
+                        std::dynamic_pointer_cast<DefaultStorageManager>(_storageManager));
+                destinyDataset->HasIndexes() = false;
+                destinyDataset->Sorted() = false;
+
+                SET_THREADS_ALIGNED(entryCount, minWorkPerThread, numCores,
+                                    destinyDataset->GetBitsPerBlock());
+
+                if (!op.compare(_EQ)) {
 #pragma omp parallel
-        for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
-          (*destinyDataset->BitMask())[i] = (*op1Buffer)[i] == operand2;
-      } else if (!op.compare(_NEQ)) {
+                    for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
+                        (*destinyDataset->BitMask())[i] = (*op1Buffer)[i] == operand2;
+                } else if (!op.compare(_NEQ)) {
 #pragma omp parallel
-        for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
-          (*destinyDataset->BitMask())[i] = (*op1Buffer)[i] != operand2;
-      } else if (!op.compare(_LE)) {
+                    for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
+                        (*destinyDataset->BitMask())[i] = (*op1Buffer)[i] != operand2;
+                } else if (!op.compare(_LE)) {
 #pragma omp parallel
-        for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
-          (*destinyDataset->BitMask())[i] = (*op1Buffer)[i] < operand2;
-      } else if (!op.compare(_GE)) {
+                    for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
+                        (*destinyDataset->BitMask())[i] = (*op1Buffer)[i] < operand2;
+                } else if (!op.compare(_GE)) {
 #pragma omp parallel
-        for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
-          (*destinyDataset->BitMask())[i] = (*op1Buffer)[i] > operand2;
-      } else if (!op.compare(_LEQ)) {
+                    for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
+                        (*destinyDataset->BitMask())[i] = (*op1Buffer)[i] > operand2;
+                } else if (!op.compare(_LEQ)) {
 #pragma omp parallel
-        for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
-          (*destinyDataset->BitMask())[i] = (*op1Buffer)[i] <= operand2;
-      } else if (!op.compare(_GEQ)) {
+                    for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
+                        (*destinyDataset->BitMask())[i] = (*op1Buffer)[i] <= operand2;
+                } else if (!op.compare(_GEQ)) {
 #pragma omp parallel
-        for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
-          (*destinyDataset->BitMask())[i] = (*op1Buffer)[i] >= operand2;
-      } else {
-        throw std::runtime_error("Invalid comparison operation.");
-      }
+                    for (SubTARPosition i = THREAD_FIRST(); i < THREAD_LAST(); ++i)
+                        (*destinyDataset->BitMask())[i] = (*op1Buffer)[i] >= operand2;
+                } else {
+                    throw std::runtime_error("Invalid comparison operation.");
+                }
+            }
 
       op1Handler->Close();
-      // delete op1Buffer;
+      //delete op1Buffer;
+
+        g = clock() - g;
+        temp = ((float) g) / CLOCKS_PER_SEC;
+        printf(" \nTempo de Consulta: %2f", temp);
+        printf("\n");
+
       return SAVIME_SUCCESS;
     }
 

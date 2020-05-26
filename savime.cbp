@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="savime"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/demori/Documentos/Savime/Savime"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/home/demori/Documentos/Savime/Savime"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/home/demori/Documentos/Savime/Savime"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/home/demori/Documentos/Savime/Savime"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/home/demori/Documentos/Savime/Savime"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="savimec">
+				<Option output="/home/demori/Documentos/Savime/Savime/savimec" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/demori/Documentos/Savime/Savime"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTBB_SUPPORT"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/."/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/configuration"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/connection"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/core/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/engine/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/lib"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/metada"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/optimizer"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/parser"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/query"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/session"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/storage"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/spst-master/src"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 savimec"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="savimec/fast">
+				<Option output="/home/demori/Documentos/Savime/Savime/savimec" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/demori/Documentos/Savime/Savime"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTBB_SUPPORT"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/."/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/configuration"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/connection"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/core/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/engine/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/lib"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/metada"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/optimizer"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/parser"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/query"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/session"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/storage"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/spst-master/src"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 savimec/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/demori/Documentos/Savime/Savime"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="savime">
+				<Option output="/home/demori/Documentos/Savime/Savime/libsavime.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/demori/Documentos/Savime/Savime"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTBB_SUPPORT"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/."/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/configuration"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/connection"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/core/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/engine/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/lib"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/metada"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/optimizer"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/parser"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/query"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/session"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/storage"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/spst-master/src"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 savime"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="savime/fast">
+				<Option output="/home/demori/Documentos/Savime/Savime/libsavime.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/demori/Documentos/Savime/Savime"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTBB_SUPPORT"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/."/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/configuration"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/connection"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/core/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/engine/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/lib"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/metada"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/optimizer"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/parser"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/query"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/session"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/storage"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/spst-master/src"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 savime/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="savime-bin">
+				<Option output="/home/demori/Documentos/Savime/Savime/savime" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/demori/Documentos/Savime/Savime"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTBB_SUPPORT"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/."/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/configuration"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/connection"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/core/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/engine/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/lib"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/metada"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/optimizer"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/parser"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/query"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/session"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/storage"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/spst-master/src"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 savime-bin"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="savime-bin/fast">
+				<Option output="/home/demori/Documentos/Savime/Savime/savime" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/demori/Documentos/Savime/Savime"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTBB_SUPPORT"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/."/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/configuration"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/connection"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/core/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/engine/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/lib"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/metada"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/optimizer"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/parser"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/query"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/session"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/storage"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/spst-master/src"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 savime-bin/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/demori/Documentos/Savime/Savime"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="savime-test">
+				<Option output="/home/demori/Documentos/Savime/Savime/savime-test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/demori/Documentos/Savime/Savime"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTBB_SUPPORT"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/."/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/configuration"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/connection"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/core/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/engine/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/lib"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/metada"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/optimizer"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/parser"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/query"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/session"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/storage"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/spst-master/src"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 savime-test"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="savime-test/fast">
+				<Option output="/home/demori/Documentos/Savime/Savime/savime-test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/demori/Documentos/Savime/Savime"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTBB_SUPPORT"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/."/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/configuration"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/connection"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/core/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/engine/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/lib"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/metada"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/optimizer"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/parser"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/query"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/session"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/storage"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/spst-master/src"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 savime-test/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="savime-staging">
+				<Option output="/home/demori/Documentos/Savime/Savime/libsavime-staging.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/demori/Documentos/Savime/Savime"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTBB_SUPPORT"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/."/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/configuration"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/connection"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/core/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/engine/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/lib"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/metada"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/optimizer"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/parser"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/query"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/session"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/storage"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/spst-master/src"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 savime-staging"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="savime-staging/fast">
+				<Option output="/home/demori/Documentos/Savime/Savime/libsavime-staging.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/demori/Documentos/Savime/Savime"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTBB_SUPPORT"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/."/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/configuration"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/connection"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/core/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/engine/include"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/lib"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/metada"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/optimizer"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/parser"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/query"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/session"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/storage"/>
+					<Add directory="/home/demori/Documentos/Savime/Savime/spst-master/src"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 savime-staging/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/demori/Documentos/Savime/Savime/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/client/client.cpp">
+			<Option target="savimec"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/configuration/default_config_manager.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/configuration/default_config_manager.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/configuration/model_configuration_manager.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/configuration/model_configuration_manager.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/connection/default_connection_manager.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/connection/default_connection_manager.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/builder.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/abstract_storage_manager.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/builder.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/config_manager.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/connection_manager.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/dynamic_bitset.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/engine.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/metadata.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/optimizer.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/parser.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/query_data_manager.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/rtree.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/savime.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/savime_hash.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/session.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/storage_manager.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/symbols.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/system_logger.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/types.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/include/util.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/main.cpp">
+			<Option target="savime-bin"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/metadata.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/query_data_manager.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/core/system_logger.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/aggregate.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/arithmetic.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/comparison.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/create_dataset.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/create_tar.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/create_tars.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/create_type.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/cross_join.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/default_engine.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/dimjoin.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/drop_dataset.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/drop_tar.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/drop_tars.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/drop_type.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/equijoin.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/filter.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/include/aggregate_buffer.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/include/aggregate_config.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/include/aggregate_engine.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/include/create_tar.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/include/ddl_operators.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/include/default_engine.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/include/dimjoin.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/include/dml_operators.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/include/filter.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/include/json_parser.h">
+			<Option target="savime"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/include/load_subtar.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/include/predictor.h">
+			<Option target="savime"/>
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/include/subset.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/load_subtar.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/logical.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/misc/curl.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/misc/include/curl.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/misc/include/json.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/misc/include/prediction_model.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/misc/json.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/misc/prediction_model.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/predict.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/predictor.cpp">
+			<Option target="savime"/>
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/register_model.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/reorient.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/save.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/scan.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/select.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/show.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/split.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/store.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/subset.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/engine/user_defined.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/lib/protocol.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/lib/savime_lib.cpp">
+			<Option target="savime"/>
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/lib/savime_lib.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/metada/default_metada_manager.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/metada/default_metadata_manager.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/optimizer/default_optimizer.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/optimizer/default_optimizer.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/optimizer/dependency_checker.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/optimizer/operation_splitter.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/optimizer/query_cost.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/optimizer/query_graph.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/parser/bison.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/parser/bison.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/parser/default_parser.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/parser/default_parser.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/parser/flex.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/parser/flex.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/parser/register_model_parser.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/parser/register_model_parser.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/parser/schema_builder.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/parser/schema_builder.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/parser/tree.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/query/default_query_data_manager.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/query/default_query_data_manager.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/session/default_session.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/session/default_session.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/session/default_session_manager.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/session/default_session_manager.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/spst-master/src/spst.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/spst-master/src/spst.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/staging/staging_dummy.cpp">
+			<Option target="savime-staging"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/storage/default_apply_template.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/storage/default_storage_manager.cpp">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/storage/default_storage_manager.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/storage/default_template.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/storage/template_builder.h">
+			<Option target="savime-bin"/>
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/engine/engine_test.cpp">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/engine/mock_engine.cpp">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/engine/mock_engine.h">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/metadata/metadata_test.cpp">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/metadata/metadata_test.h">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/mock_builder.cpp">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/mock_builder.h">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/mock_logger.h">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/optimizer/mock_optimizer.h">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/optimizer/test_optimizer.cpp">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/parser/mock_parser.h">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/parser/parser_test.cpp">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/query/mock_query_data.h">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/query/teste_query_data.cpp">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/storage/mock_default_storage_manager.cpp">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/storage/mock_default_storage_manager.h">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/storage/storage_test.cpp">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/test_main.cpp">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/test_queries_creator.cpp">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/test_queries_creator.h">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/test_queries_results.cpp">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/test_utils.cpp">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/test/test_utils.h">
+			<Option target="savime-test"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/FindTBB.cmake">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/demori/Documentos/Savime/Savime/config.h.in">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

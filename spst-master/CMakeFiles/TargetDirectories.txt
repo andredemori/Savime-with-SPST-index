@@ -1,0 +1,3 @@
+/home/demori/Documentos/spst-master/CMakeFiles/rebuild_cache.dir
+/home/demori/Documentos/spst-master/CMakeFiles/main.dir
+/home/demori/Documentos/spst-master/CMakeFiles/edit_cache.dir

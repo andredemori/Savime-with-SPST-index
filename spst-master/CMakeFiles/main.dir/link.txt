@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/main.dir/src/spst.cpp.o  -o main 

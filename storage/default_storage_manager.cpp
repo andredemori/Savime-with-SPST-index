@@ -254,6 +254,7 @@ DatasetPtr DefaultStorageManager::Create(DataType type, savime_size_t entries) {
     //    "+ds->location+" Error: "+std::string(strerror(error)));
     //}
 
+
     DatasetPtr ds = make_shared<Dataset>(UNSAVED_ID, "", location, type);
     ds->Sorted() = false;
 
@@ -288,7 +289,7 @@ DatasetPtr DefaultStorageManager::Create(DataType type, double init,
 }
 
 DatasetPtr DefaultStorageManager::Create(DataType type,
-                                         vector<string> literals) {
+                                         vector<string> literals) { //literals possui os valores do dataset
 #define BLANK '\0'
 
   DatasetPtr newDataset;
@@ -340,7 +341,7 @@ DatasetPtr DefaultStorageManager::Create(DataType type,
   case INT32: {
     int32_t *buffer = (int32_t *)handler->GetBuffer();
     for (int32_t i = 0; i < literals.size(); i++) {
-      buffer[i] = (int32_t)strtol(literals[i].c_str(), NULL, 10);
+      buffer[i] = (int32_t)strtol(literals[i].c_str(), NULL, 10); //preenche o arquivo em _location
     }
     break;
   }
@@ -425,6 +426,7 @@ DatasetHandlerPtr DefaultStorageManager::GetHandler(DatasetPtr dataset) {
 
   DatasetHandlerPtr handler = DatasetHandlerPtr(
     new DefaultDatasetHandler(dataset, _this, hugeTblThreshold, hugeTblSize));
+
   return handler;
 }
 
@@ -1286,7 +1288,7 @@ SavimeResult DefaultStorageManager::ComparisonStr(std::string op,
 SavimeResult DefaultStorageManager::Comparison(std::string op,
                                                DatasetPtr operand1,
                                                Literal operand2,
-                                               DatasetPtr &destinyDataset) {
+                                               DatasetPtr &destinyDataset){
   SavimeResult result;
   try {
 #ifdef TIME
@@ -1787,12 +1789,12 @@ void DefaultStorageManager::FromBitMaskToPosition(DatasetPtr &dataset,
 
   // Setting parameter dataset with newly created dataset to hold positions
   dataset->Redefine(dataset->GetId(), dataset->GetName(),
-                    auxDataSet->GetLocation(), auxDataSet->GetType());
+                    auxDataSet->GetLocation(), auxDataSet->GetType()); //redefine o dataset
 
   // To avoid file removal by destructor
   auxDataSet->ClearListeners();
 
-  DatasetHandlerPtr handler = this->GetHandler(dataset);
+  DatasetHandlerPtr handler = this->GetHandler(dataset); //esse dataset não tem a árvore
   SubTARPosition *buffer = (SubTARPosition *)handler->GetBuffer();
 
 // creating index set from bitmap

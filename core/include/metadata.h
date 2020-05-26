@@ -1,5 +1,8 @@
 #include <utility>
 
+#include "../spst-master/src/spst.h"
+
+
 #ifndef METADATA_H
 #define METADATA_H
 
@@ -188,6 +191,7 @@ private:
   savime_size_t _length; /*!<Length in bytes of the dataset file.*/
   savime_size_t _entry_count; /*!<Number of entries the dataset stores. Equals
                                 length/sizeof(type).*/
+
   bool _has_indexes;  /*!<Specifies for a dataset storing a filtering result, if
                         the indexes obtained based on the bitmask are
                         available.*/
@@ -206,6 +210,8 @@ private:
   void Define(int64_t id, string name, string file, DataType type);
 
 public:
+
+  SPSTTree SpstManager = NULL; //spst-index
   Dataset(int64_t id, string name, savime_size_t size, DataType type);
   Dataset(int64_t id, string name, string file, DataType type);
   explicit Dataset(BitsetPtr bitMask);

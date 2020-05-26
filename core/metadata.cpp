@@ -746,6 +746,7 @@ DatasetPtr Subtar::GetDataSetFor(string name) {
                            dsOriginal->GetLocation(), newType);
     dsCopy->HasIndexes() = dsOriginal->HasIndexes();
     dsCopy->Sorted() = dsOriginal->Sorted();
+    dsCopy->SpstManager = dsOriginal->SpstManager;
     return dsCopy;
   } else {
     return dsOriginal;

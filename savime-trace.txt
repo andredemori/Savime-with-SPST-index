@@ -1,0 +1,25 @@
+Stack trace:
+         /home/demori/Documentos/Savime/Savime/savime : DefaultSystemLogger::SystemLoggerHandler(int)+0x32
+         /lib/x86_64-linux-gnu/libc.so.6 : +0x3ef20
+         /home/demori/Documentos/Savime/Savime/savime : copyTree(SPSTNode*)+0x7b
+         /home/demori/Documentos/Savime/Savime/savime : TemplateStorageManager<int, double>::Comparison(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<Dataset>, Literal, std::shared_ptr<Dataset>&)+0x285
+         /home/demori/Documentos/Savime/Savime/savime : DefaultStorageManager::Comparison(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::shared_ptr<Dataset>, Literal, std::shared_ptr<Dataset>&)+0x2f4
+         /home/demori/Documentos/Savime/Savime/savime : +0xf6aede
+         /usr/lib/x86_64-linux-gnu/libgomp.so.1 : GOMP_parallel+0x3f
+         /home/demori/Documentos/Savime/Savime/savime : Comparison::GenerateSubtar(long)+0x236
+         /home/demori/Documentos/Savime/Savime/savime : TARGenerator::GetSubtar(long)+0x1c1
+         /home/demori/Documentos/Savime/Savime/savime : Filter::GenerateSubtar(long)+0x423
+         /home/demori/Documentos/Savime/Savime/savime : TARGenerator::GetSubtar(long)+0x1c1
+         /home/demori/Documentos/Savime/Savime/savime : DefaultEngine::SendResultingTAR(EngineListener*, std::shared_ptr<TAR>)+0xfa
+         /home/demori/Documentos/Savime/Savime/savime : DefaultEngine::Run(std::shared_ptr<QueryDataManager>, EngineListener*)+0xdf9
+         /home/demori/Documentos/Savime/Savime/savime : DefaultSession::HandleResultRequest(std::shared_ptr<ConnectionDetails>, std::shared_ptr<MessageHeader>)+0x475
+         /home/demori/Documentos/Savime/Savime/savime : DefaultSession::HandleMessage(std::shared_ptr<ConnectionDetails>)+0x46f
+         /home/demori/Documentos/Savime/Savime/savime : DefaultSession::Run()+0x19f
+         /home/demori/Documentos/Savime/Savime/savime : void std::__invoke_impl<void, void (DefaultSession::*)(), std::shared_ptr<DefaultSession>>(std::__invoke_memfun_deref, void (DefaultSession::*&&)(), std::shared_ptr<DefaultSession>&&)+0x6c
+         /home/demori/Documentos/Savime/Savime/savime : std::__invoke_result<void (DefaultSession::*)(), std::shared_ptr<DefaultSession> >::type std::__invoke<void (DefaultSession::*)(), std::shared_ptr<DefaultSession> >(void (DefaultSession::*&&)(), std::shared_ptr<DefaultSession>&&)+0x4e
+         /home/demori/Documentos/Savime/Savime/savime : decltype (__invoke((_S_declval<0ul>)(), (_S_declval<1ul>)())) std::thread::_Invoker<std::tuple<void (DefaultSession::*)(), std::shared_ptr<DefaultSession> > >::_M_invoke<0ul, 1ul>(std::_Index_tuple<0ul, 1ul>)+0x43
+         /home/demori/Documentos/Savime/Savime/savime : std::thread::_Invoker<std::tuple<void (DefaultSession::*)(), std::shared_ptr<DefaultSession> > >::operator()()+0x2c
+         /home/demori/Documentos/Savime/Savime/savime : std::thread::_State_impl<std::thread::_Invoker<std::tuple<void (DefaultSession::*)(), std::shared_ptr<DefaultSession> > > >::_M_run()+0x1c
+         /usr/lib/x86_64-linux-gnu/libstdc++.so.6 : +0xbd6df
+         /lib/x86_64-linux-gnu/libpthread.so.0 : +0x76db
+         /lib/x86_64-linux-gnu/libc.so.6 : clone+0x3f

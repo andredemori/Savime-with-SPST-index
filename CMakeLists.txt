@@ -4,9 +4,9 @@ project(savime)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DDEBUG \
-    -g -DTIME -rdynamic -m64 -fpic -fopenmp -lboost_regex -lboost_iostreams -ljsoncpp -O0")
+    -g -DTIME -rdynamic -m64 -fpic -fopenmp -lboost_regex -lboost_iostreams -ljsoncpp -O0 -fpermissive")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}  \
-    -g -DTIME -rdynamic -m64 -fpic -fopenmp -lboost_regex -lboost_iostreams -ljsoncpp -O3")
+    -g -DTIME -rdynamic -m64 -fpic -fopenmp -lboost_regex -lboost_iostreams -ljsoncpp -O3 -fpermissive")
 
 
 option(BUILD_SAVIME_CLIENT "Build Savime client" ON)
@@ -33,6 +33,8 @@ include_directories(parser)
 include_directories(query)
 include_directories(session)
 include_directories(storage)
+
+include_directories(spst-master/src)
 
 set (Savime_PACKAGE_VERSION \"1.0\")
 configure_file (
@@ -70,6 +72,8 @@ endif(BUILD_WITH_FULL_TYPE_SUPPORT)
 if(BUILD_SAVIME_TESTS)
 
     add_executable(savime-test
+            spst-master/src/spst.cpp
+            spst-master/src/spst.h
     configuration/default_config_manager.cpp
     configuration/default_config_manager.h
     connection/default_connection_manager.cpp
@@ -196,6 +200,8 @@ if(BUILD_WITH_CATALYST)
 
 
     add_executable(savime-bin
+            spst-master/src/spst.cpp
+            spst-master/src/spst.h
         configuration/default_config_manager.cpp
         configuration/default_config_manager.h
         connection/default_connection_manager.cpp
@@ -310,6 +316,8 @@ if(BUILD_WITH_CATALYST)
 else(BUILD_WITH_CATALYST)
 
     add_executable(savime-bin
+            spst-master/src/spst.cpp
+            spst-master/src/spst.h
             configuration/default_config_manager.cpp
             configuration/default_config_manager.h
             connection/default_connection_manager.cpp

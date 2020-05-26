@@ -17,6 +17,17 @@
 #include <boost/regex.hpp>
 #include "include/ddl_operators.h"
 
+#include <iostream>
+#include <string>
+#include <stdlib.h>
+#include <iomanip>
+#include <fstream>
+#include <math.h>
+#include <unistd.h>
+#include "../spst-master/src/spst.h"
+
+using namespace std;
+
 //using namespace boost;
 
 CreateDataset::CreateDataset(OperationPtr operation, ConfigurationManagerPtr configurationManager,
@@ -30,12 +41,43 @@ SavimeResult CreateDataset::Run() {
   try {
     ParameterPtr parameter = _operation->GetParametersByName(COMMAND);
     ParameterPtr parameter2 = _operation->GetParametersByName(OPERAND(0));
+    ParameterPtr parameter3 = _operation->GetParametersByName(NEW_MEMBER); //index
     std::string commandString = parameter->literal_str;
     std::string inBetween = trim_delimiters(commandString);
     std::vector<std::string> arguments = split(inBetween, _COLON[0]);
 
+      SPSTTree T = NULL;
+
+    if((parameter3 != NULL) && (parameter2->literal_str.compare("___LITERAL___") == 0)) {
+
+        auto temp = _operation->GetParameters();
+        auto temp1 = temp.front();
+        auto temp2 = temp.begin();
+        temp2++;
+        temp2++;
+        temp2++;
+
+        double datasetLiteral[temp.size() - 3]; //vetor que contém os dados que serão passados para indexação
+
+        for (int i = 0; i < temp.size() - 3; i++) {
+
+            auto temp3 = temp2->get();
+            //cout << stod(temp3->literal_str) << "\n"; // imprime valores que foram passados por parâmetro no literal()
+            datasetLiteral[i] = stod(temp3->literal_str); //converter para double
+            temp2++;
+        }
+
+            if (parameter3.get()->literal_str.compare("\"spst-index\"") == 0){
+                for (size_t i = 0; i < temp.size() - 3; i++) {
+                    T = Insert(i, datasetLiteral[i], T);
+                }
+            }else{
+                throw std::runtime_error("Invalid index structure.");
+            }
+    }
+
     if (arguments.size() == 2 || arguments.size() == 3) {
-      std::string dsName = trim(arguments[0]);
+      std::string dsName = trim(arguments[0]); // erro
       std::string type = trim(arguments[1]);
       std::string ssize = "1";
       int64_t size = 1;
@@ -124,6 +166,35 @@ SavimeResult CreateDataset::Run() {
           if (ds == nullptr)
             throw std::runtime_error("Invalid range specification");
 
+            if(parameter3 != NULL){
+            //ler arquivo gerado pela expressão com o dataset e depois colocar na estrutura de indexação
+            ifstream file (ds->GetLocation(), ios::in|ios::binary);
+            int size_datasetExpression = (((dRanges[2] - dRanges[0])/dRanges[1])+1) * dRanges[3];
+            int read;
+            double datasetExpression[size_datasetExpression];
+            int i = 0;
+            if(file.is_open())
+            {
+                while(!file.eof())
+                {
+                    file.read( reinterpret_cast<char*>( &read ), sizeof read);
+                    //cout << read << endl;
+                    datasetExpression[i] = read;
+                    i++;
+                }
+            }
+            file.close();
+
+                if (parameter3.get()->literal_str.compare("\"spst-index\"") == 0){
+                    for (size_t i = 0; i < size_datasetExpression; i++) {
+                        T = Insert(i, datasetExpression[i], T);
+                    }
+                }else{
+                    throw std::runtime_error("Invalid index structure.");
+                }
+                ds->SpstManager = T;
+            }
+
           ds->GetId() = UNSAVED_ID;
           ds->GetName() = dsName;
           ds->Sorted() = true;
@@ -154,7 +225,7 @@ SavimeResult CreateDataset::Run() {
             throw std::runtime_error(
               "Could not create dataset " + dsName + ".");
           }
-
+          ds->SpstManager = T;
           ds->GetId() = UNSAVED_ID;
           ds->GetName() = dsName;
         } else {
@@ -172,12 +243,42 @@ SavimeResult CreateDataset::Run() {
         ds = make_shared<Dataset>(UNSAVED_ID, dsName, file, dsType);
         ds->Sorted() = false;
 
+          if(parameter3 != NULL){
+              //pegar os dados do arquivo e passar para a árvore de indexação
+              ifstream file2(file, ios::binary);
+              int read;
+              int i = 0;
+              double datasetIndexfile[ds->GetEntryCount()];
+              if(file2.is_open())
+              {
+                  while(!file2.eof())
+                  {
+                      file2.read( reinterpret_cast<char*>( &read ), sizeof read);
+                      //cout << read << endl;
+                      datasetIndexfile[i] = read;
+                      i++;
+                  }
+              }
+              file2.close();
+
+                  if (parameter3.get()->literal_str.compare("\"spst-index\"") == 0){
+                      for (size_t i = 0; i < ds->GetEntryCount(); i++) {
+                          T = Insert(i, datasetIndexfile[i], T);
+                      }
+                  }else{
+                      throw std::runtime_error("Invalid index structure.");
+                  }
+              ds->SpstManager = T;
+          }
+
         if (_storageManager->Save(ds) == SAVIME_FAILURE) {
           throw std::runtime_error("Could not save dataset. "
                                    "Not enough space left. Consider "
                                    "increasing the max storage size.");
         }
       }
+
+      //pegar o dataset e passar os dados pra árvore
 
       TARSPtr defaultTARS = _metadataManager->GetTARS(
         _configurationManager->GetIntValue(DEFAULT_TARS));

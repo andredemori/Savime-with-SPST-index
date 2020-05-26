@@ -120,6 +120,7 @@ public:
     _engine = engine;
   }
 
+
   /**
    * Generate the desired subtar in the query plan pipeline.
    * @param subtarIndex is the number of the subtar to be generated.

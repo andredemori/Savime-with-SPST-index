@@ -242,7 +242,7 @@ DefaultParser::ParseCreateDataset(QueryExpressionPtr queryExpressionNode,
   CharacterStringLiteralPtr stringLiteral;
   UnsignedNumericLiteralPtr unsignedNumericLiteral;
   SignedNumericLiteralPtr signedNumericLiteral;
-  CharacterStringLiteralPtr commandString, filler;
+  CharacterStringLiteralPtr commandString, filler, indexOption;
   operation->SetResultingTAR(nullptr);
 
   list<ValueExpressionPtr> params =
@@ -289,13 +289,68 @@ DefaultParser::ParseCreateDataset(QueryExpressionPtr queryExpressionNode,
 
         literalParams.pop_front();
       }
+
     } else {
       throw std::runtime_error("Literal definition expected but " + identifier +
           " found.");
     }
-  } else {
-    throw std::runtime_error("Invalid parameters for create_dataset operator.");
-  }
+      // Checking first parameter (domain) --- three params
+  } else if (params.size() == 3) {
+
+    commandString = PARSE(params.front(), CharacterStringLiteral);
+    operation->AddParam(PARAM(TAL_CREATE_DATASET, _COMMAND),
+                          commandString->_literalString);
+
+      params.pop_front();
+      params.begin();
+
+      if(filler = PARSE(params.front(), CharacterStringLiteral)) {
+
+          operation->AddParam(PARAM(TAL_CREATE_DATASET, _OPERAND, 0),
+                              filler->_literalString);
+          indexOption = PARSE(params.back(), CharacterStringLiteral);
+          operation->AddParam(PARAM(TAL_CREATE_DATASET, _NEW_MEMBER, 0),
+                              indexOption->_literalString);
+      }else if(queryExpression = PARSE(params.front(), QueryExpression)) {
+          string identifier = GET_IDENTIFER_BODY(queryExpression);
+          indexOption = PARSE(params.back(), CharacterStringLiteral);
+          operation->AddParam(PARAM(TAL_CREATE_DATASET, _NEW_MEMBER),
+                              indexOption->_literalString);
+
+          if (identifier == LITERAL) {
+              operation->AddParam(PARAM(TAL_CREATE_DATASET, _OPERAND, 0),
+                                  LITERAL_FILLER_MARK);
+
+              list<ValueExpressionPtr> literalParams =
+                      queryExpression->_value_expression_list->ParamsToList();
+              while (!literalParams.empty()) {
+                  ValueExpressionPtr param = literalParams.front();
+
+                  if (stringLiteral = PARSE(param, CharacterStringLiteral)) {
+                      operation->AddParam(PARAM(TAL_CREATE_DATASET, _OPERAND, op_count++),
+                                          stringLiteral->_literalString);
+                  } else if (unsignedNumericLiteral =
+                                     PARSE(param, UnsignedNumericLiteral)) {
+                      operation->AddParam(PARAM(TAL_CREATE_DATASET, _OPERAND, op_count++),
+                                          to_string(unsignedNumericLiteral->_doubleValue));
+                  } else if (signedNumericLiteral = PARSE(param, SignedNumericLiteral)) {
+                      operation->AddParam(PARAM(TAL_CREATE_DATASET, _OPERAND, op_count++),
+                                          to_string(signedNumericLiteral->_doubleValue));
+                  } else {
+                      throw std::runtime_error("Invalid params for literal definition.");
+                  }
+
+                  literalParams.pop_front();
+              }
+
+          } else {
+              throw std::runtime_error("Literal definition expected but " + identifier +
+                                       " found.");
+          }
+      }
+      } else {
+          throw std::runtime_error("Invalid parameters for create_dataset operator.");
+      }
 
   return operation;
 }

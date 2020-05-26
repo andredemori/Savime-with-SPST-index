@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/demori/Documentos/spst-master/src/spst.cpp
+spst.h
+/home/demori/Documentos/spst-master/src/spst.h
+cstdlib
+-
+iomanip
+-
+iostream
+-
+stdio.h
+-
+
+/home/demori/Documentos/spst-master/src/spst.h
+cstdint
+-
+vector
+-
+string
+-
+

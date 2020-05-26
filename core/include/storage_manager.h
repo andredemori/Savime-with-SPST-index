@@ -19,6 +19,7 @@ protected:
   DatasetPtr _ds; /*!<The Dataset reference to be handled.*/
 
 public:
+
   /**
    * Constructor. It maps the Dataset file in memory
    * and sets the  cursor at position 0.

@@ -72,6 +72,10 @@ public:
                QueryDataManagerPtr queryDataManager, MetadataManagerPtr metadataManager, StorageManagerPtr storageManager,
                EnginePtr engine);
 
+    CreateDataset(OperationPtr operation, ConfigurationManagerPtr configurationManager,
+                  QueryDataManagerPtr queryDataManager, MetadataManagerPtr metadataManager,
+                  StorageManagerPtr storageManager, EnginePtr engine, bool index);
+
     SavimeResult GenerateSubtar(SubTARIndex subtarIndex) override { return SAVIME_FAILURE; }
     SavimeResult Run() override;
 };
